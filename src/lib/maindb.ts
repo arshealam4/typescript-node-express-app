@@ -2,9 +2,7 @@
 import * as config from "config";
 let mongoose = require("mongoose");
 
-global.Promise = require("q").Promise;
-mongoose.Promise = global.Promise;
-
+mongoose.Promise = Promise;
 
 const db = mongoose.createConnection(String(config.get("mongodb")), {
     useNewUrlParser: true
